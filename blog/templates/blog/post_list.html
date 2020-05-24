@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-
-<html>
 <head>
-    <title>
-        Post List
-    </title>
+
+    <title> Post List </title>
 
 </head>
+
 <body>
+
     <div>
-        <h1> Post_List_Testing </h1>
+        <h1><a href="/">Post List Test</a></h1>
     </div>
 
     {% for post in posts %}
         <div>
-            <p> Published: {{ post.published_date }}</p>
+            <p>Published: {{ post.published_date }}</p>
             <h2><a href="">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
+
 </body>
-</html>
