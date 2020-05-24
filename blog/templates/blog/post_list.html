@@ -1,27 +1,29 @@
 {% load static %}
-<head>
+<html>
+    <head>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <title> Post List </title>
 
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-    <title> Post List </title>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">    
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <div>
-        <h1><a href="/">Post List Test</a></h1>
-    </div>
-
-    {% for post in posts %}
         <div>
-            <p>Published: {{ post.published_date }}</p>
-            <h2><a href="">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <h1><a href="/">Post List Test</a></h1>
         </div>
-    {% endfor %}
 
-</body>
+        {% for post in posts %}
+            <div>
+                <p>Published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+
+    </body>
+</html>
