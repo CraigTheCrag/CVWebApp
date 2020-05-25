@@ -19,11 +19,13 @@
 
         {% for post in posts %}
             <div>
-                <p>Published: {{ post.published_date }}</p>
                 <h2><a href="">{{ post.title }}</a></h2>
+                <p>Published: {{ post.published_date }}</p>
                 <p>{{ post.text|linebreaksbr }}</p>
+                <div class="iframeVidDiv">
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ post.video_id }}"></iframe>
+                </div>
             </div>
         {% endfor %}
-
     </body>
 </html>
