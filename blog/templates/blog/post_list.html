@@ -1,31 +1,14 @@
-{% load static %}
-<html>
-    <head>
+{% extends 'blog/base.html' %}
 
-        <title> Post List </title>
-
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">    
-
-    </head>
-
-    <body>
-
-        <div>
-            <h1><a href="/">Post List Test</a></h1>
-        </div>
-
-        {% for post in posts %}
-            <div>
-                <h2><a href="">{{ post.title }}</a></h2>
-                <p>Published: {{ post.published_date }}</p>
-                <p>{{ post.text|linebreaksbr }}</p>
-                <div class="iframeVidDiv">
-                    <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ post.video_id }}"></iframe>
-                </div>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p class="post-desc">{{ post.text|linebreaksbr }}</p>
+            <div class="post-video">
+                <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ post.video_id }}"></iframe>
             </div>
-        {% endfor %}
-    </body>
-</html>
+            <p class="post-date">Published: {{ post.published_date }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
