@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@600&display=swap');
+
 .main-container {
     position: relative;
     top: 0px;
@@ -16,10 +19,41 @@
     justify-content: center;
 }
 
-.page-header h1 a {
+#page-title {
     color: black;
-    font-family: 'Lobster';
+    font-family: 'Advent Pro';
     font-size: 50px;
+    margin: 0px 500px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.tool {
+    color: black;
+    font-family: 'Advent Pro', sans-serif;
+    letter-spacing: 0.3em;
+}
+
+.icon-bar {
+    text-align: center;
+}
+
+.menu-icon {
+    color: black;
+    margin: auto 25px;
+    font-size: 45px;
+}
+
+.post-title {
+    color: black;
+    font-family: 'Advent Pro', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+}
+
+.post-title:hover {
+    color: rgba(70, 70, 70, 0.8);
+    text-decoration: underline;
 }
 
 .page header h1 a:hover {
@@ -28,8 +62,4 @@
 
 .content-container {
     padding-left: 15px;
-}
-
-.post h2 a {
-    color: rgb(80, 161, 253);
 }
