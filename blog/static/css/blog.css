@@ -80,3 +80,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 15px;
     padding-top: 100px;
 }
+
+.title-no-link {
+    font-weight: bold;
+}
+
+.title-no-link:hover {
+    text-decoration: none;
+}
