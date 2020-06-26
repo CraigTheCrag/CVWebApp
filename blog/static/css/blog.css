@@ -14,9 +14,10 @@
     margin: 0px;
     height: 100px;
     width: 100%;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
+    grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
 }
 
 #page-title {
@@ -26,6 +27,12 @@
     margin: 0px 500px;
     font-weight: bold;
     letter-spacing: 0.1em;
+    grid-column: 3 / span 1;
+}
+
+.tool-bar {
+    text-align: center;
+    grid-column: 1 / span 2;
 }
 
 .tool {
@@ -36,6 +43,7 @@
 
 .icon-bar {
     text-align: center;
+    grid-column: 4 / span 2;
 }
 
 .menu-icon {
