@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template: 1fr / repeat(5, 1fr);
+    grid-template: 1fr 25px / repeat(5, 1fr);
     position: fixed;
     z-index: 5;
 }
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0px 500px;
     font-weight: bold;
     letter-spacing: 0.1em;
-    grid-column: 3 / span 1;
+    grid-area: 1 / 3 / span 1 / span 1;
 }
 
 #page-title:hover {
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .tool-bar {
     text-align: center;
-    grid-column: 1 / span 2;
+    grid-area: 1 / 1 / span 1 / span 2;
 }
 
 .tool {
@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .icon-bar {
     text-align: center;
-    grid-column: 4 / span 2;
+    grid-area: 1 / 4 / span 1 / span 2;
 }
 
 .menu-icon {
@@ -87,4 +87,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .title-no-link:hover {
     text-decoration: none;
+}
+
+.user-greeting {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(50, 0, 200);
+    color: white;
+    text-align: center;
+    grid-area: 2 / 1 / span 1 / span 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1em;
+    font-weight: bold;
 }
