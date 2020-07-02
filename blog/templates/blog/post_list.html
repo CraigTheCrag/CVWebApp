@@ -1,6 +1,18 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
+    {% if user.is_authenticated %}
+        <div class="change-bar">
+            <div class="add-link">
+                <h2><a href="{% url 'post_new' %}">ADD</a></h2>
+            </div>
+            <div class="draft-link">
+                <h2><a href="{% url 'post_draft_list' %}">DRAFTS</a></h2>
+            </div>
+        </div>
+    {% endif %}
+
     {% for post in posts %}
         <div class="post">
             <img class="banner" src="../../static/res/Banner.png">
@@ -10,10 +22,7 @@
             <div class="post-desc">
                 <p>{{ post.text|linebreaksbr|truncatewords:20 }}</p>
             </div>
-            <div class="post-video">
-                <iframe class="post-iframe" width="420" height="315" src="https://www.youtube.com/embed/{{ post.video_id }}"></iframe>
-            </div>
-            <div class="post-date">
+            <div class="date-no-vid">
                 <p>Published: {{ post.published_date }}</p>
             </div>
         </div>

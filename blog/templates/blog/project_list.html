@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <div class="change-bar">
+            <div class="add-link">
+                <h2><a href="{% url 'project_new' %}">ADD</a></h2>
+            </div>
+            <div class="draft-link">
+                <h2><a href="{% url 'project_draft_list' %}">DRAFTS</a></h2>
+            </div>
+        </div>
+    {% endif %}
+
+    {% for project in projects %}
+        <div class="post">
+            <img class="banner" src="../../static/res/Banner.png">
+            <div class="post-title">
+                <h2><a href="{% url 'project_detail' pk=project.pk %}">{{ project.title }}</a></h2>
+            </div>
+            <div class="post-desc">
+                <p>{{ project.text|linebreaksbr|truncatewords:20 }}</p>
+            </div>
+            {% if project.video_id %}
+                <div class="post-video">
+                    <iframe class="post-iframe" width="420" height="315" src="https://www.youtube.com/embed/{{ project.video_id }}"></iframe>
+                </div>
+                <div class="post-date">
+                    <p>Published: {{ project.published_date }}</p>
+                </div>
+            {% else %}
+                <div class="date-no-vid">
+                    <p>Published: {{ project.published_date }}</p>
+                </div>
+            {% endif %}
+
+            
+        </div>
+    {% endfor %}
+{% endblock %}

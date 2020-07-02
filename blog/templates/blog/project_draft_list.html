@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for project in projects %}
+        <div class="post-draft">
+            <h1><a href="{% url 'project_detail' pk=project.pk %}" class="post-title">{{ project.title }}</a></h1>
+            if {% project.video_id %}
+                <div class="post-video">
+                    <iframe width="420" height="315" src="https://www.youtube.com/embed/{{ project.video_id }}"></iframe>
+                </div>
+            {% endif %}
+            <p>{{ project.text|truncatechars:200 }}</p>
+            <p class="date">Created: {{ project.created_date|date:'d-m-Y' }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -23,12 +23,11 @@
                     </div>
                 {% endif %}
                 <h1><a href="/" id="page-title">Portfolio</a></h1>
-                {% if user.is_authenticated %}
-                    <div class="icon-bar">
-                        <a href="{% url 'post_new' %}" class="menu-icon"><span class="glyphicon glyphicon-plus"></span></a>
-                        <a href="{% url 'post_draft_list' %}" class="menu-icon"><span class="glyphicon glyphicon-edit"></span></a>
-                    </div>
-                {% endif %}
+
+                <div class="nav-bar">
+                    <a href="{% url 'post_list' %}" class="nav-text">Posts</a>
+                    <a href="{% url 'project_list' %}" class="nav-text">Projects</a>
+                </div>
                 
                 {% if user.is_authenticated %}
                     <div class="user-greeting">
