@@ -190,3 +190,13 @@ h1, h2, h3, h4, h5, h6 {
 .draft-link {
     grid-area: 1 / 4 / span 1 / span 1;
 }
+
+.github-link a{
+    color: black;
+    font-size: 30px;
+}
+
+.github-link a:hover {
+    color: rgba(70, 70, 70, 0.8);
+    text-decoration: underline;
+}

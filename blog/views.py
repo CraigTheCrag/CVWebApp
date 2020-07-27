@@ -74,6 +74,7 @@ def project_new(request):
             project = form.save(commit=False)
             project.author = request.user
             project.video_id = form.cleaned_data["video_id"]
+            project.github_title = form.cleaned_data["github_title"]
             project.save()
             return redirect('project_detail', pk=project.pk)
     else:
@@ -89,6 +90,7 @@ def project_edit(request, pk):
             project = form.save(commit=False)
             project.author = request.user
             project.video_id = form.cleaned_data["video_id"]
+            project.github_title = form.cleaned_data["github_title"]
             project.save()
             return redirect('project_detail', pk=project.pk)
     else:

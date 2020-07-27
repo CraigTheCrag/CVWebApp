@@ -6,7 +6,6 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
-    video_id = models.CharField(max_length=11, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
@@ -22,6 +21,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     video_id = models.CharField(max_length=11, null=True)
+    github_title = models.CharField(max_length=100, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
