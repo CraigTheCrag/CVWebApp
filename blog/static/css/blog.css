@@ -74,11 +74,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title-no-link {
+    font-size: 50px;
     font-weight: bold;
-}
-
-.title-no-link:hover {
-    text-decoration: none;
+    padding-top: 50px;
 }
 
 .user-greeting {
@@ -191,12 +189,39 @@ h1, h2, h3, h4, h5, h6 {
     grid-area: 1 / 4 / span 1 / span 1;
 }
 
-.github-link a{
+.github-link h3 a{
     color: black;
     font-size: 30px;
 }
 
-.github-link a:hover {
+.github-link h3 a:hover {
     color: rgba(70, 70, 70, 0.8);
     text-decoration: underline;
+}
+
+.profile-pic a img {
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(150, 150, 150, 0.5);
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;    
+}
+
+.data-container {
+    padding-top: 50px;
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+}
+
+.personal-data-container {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.other-data-container {
+    grid-area: 1 / 2 / span 1 / span 1;
 }

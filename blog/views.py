@@ -66,6 +66,9 @@ def project_detail(request, pk):
     project = get_object_or_404(Project, pk=pk)
     return render(request, 'blog/project_detail.html', {'project': project})
 
+def homepage(request):
+    return render(request, 'blog/homepage.html', {})
+
 @login_required
 def project_new(request):
     if (request.method == "POST"):
