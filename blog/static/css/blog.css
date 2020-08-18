@@ -127,7 +127,7 @@ p {
     letter-spacing: 0.05em;
     font-weight: bold;
     grid-area: 2 / 3 / span 1 / span 3;
-    z-index: 5;
+    z-index: 4;
 }
 
 .post-title h2 a {
